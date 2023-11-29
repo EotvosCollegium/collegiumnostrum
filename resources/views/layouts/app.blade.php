@@ -84,8 +84,12 @@
 
         <footer class="mb-4 footer-wrapper">
             <div class="container">
-                <hr>
                 <div class="d-flex flex-column align-items-center">
+                    <img class="nka-acknowledgement" alt="Nemzeti Kulturális Alap" src="/images/nka_2023(2).png" />
+                    <i class="nka-acknowledgement">A projekt a Nemzeti Kulturális Alap támogatásával valósult meg.</i>
+
+                    <hr class="nka-acknowledgement">
+
                     <div>
                         <span class="small">Collegium Nostrum</span>
                         <span class="mx-1">·</span>
