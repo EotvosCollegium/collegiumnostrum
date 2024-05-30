@@ -91,14 +91,6 @@
                     <hr class="nka-acknowledgement">
 
                     <div>
-                        <span class="small">Collegium Nostrum</span>
-                        <span class="mx-1">·</span>
-                        <span class="small">Laravel {{ app()->version() }}</span>
-                        <span class="mx-1">·</span>
-                        <span class="small">PHP {{ phpversion() }}</span>
-                    </div>
-
-                    <div>
                         <span class="small"><a href="https://eotvos.elte.hu/" class="footer-link">Eötvös József Collegium</a></span>
                     </div>
 
