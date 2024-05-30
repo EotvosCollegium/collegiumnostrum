@@ -17,11 +17,12 @@ FORWARD_DB_PORT=33066
 ```
 - In `.env`, rewrite `DB_HOST` from the given IP to `mysql`.
 - Run `./vendor/bin/sail up`.
-- Open another terminal. Before seeding, add the correct privilege to the user `collegiumnostrum` in MySQL:
-  - Run `docker exec -it collegiumnostrum-mysql-1 bash`. This way, you'll log into the container as root.
-  - Run `mysql --password` with the password given in `.env`.
-  - Say `SET GLOBAL log_bin_trust_function_creators = 1;`.
-  - Exit.
+- Open another terminal. Before seeding, add the correct privilege to the user `collegiumnostrum` in MySQL (this has to be done every time) by running:
+
+```sh
+docker exec -it collegiumnostrum-mysql-1 mysql --password -e "SET GLOBAL log_bin_trust_function_creators = 1;"
+```
+
 - Run `./vendor/bin/sail artisan migrate:fresh --seed`. (Other Artisan commands need to be executed similarly.)
 - Now you can test the site at `http://localhost:8080`.
 - Instead of SSH, you can use `docker exec -it collegiumnostrum-laravel.test-1 bash`.

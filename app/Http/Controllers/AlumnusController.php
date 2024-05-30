@@ -34,7 +34,9 @@ class AlumnusController extends Controller
             $idsHavingDraftPairs = DB::table('alumni')->where('is_draft', false)->whereNotNull('pair_id')->pluck('id');
 
             return view('alumni.index', [
-                'alumni' => \App\Models\Alumnus::whereNotIn('id', $idsHavingDraftPairs)->orderBy('name')->paginate(12),
+                'alumni' => \App\Models\Alumnus::whereNotIn('id', $idsHavingDraftPairs)
+                    ->orderBy('is_draft', 'desc')->orderBy('name') // the first ones will be those having a draft
+                    ->paginate(12),
                 'majors_enum' => Major::$majors_enum,
                 'further_courses_enum' => FurtherCourse::$further_courses_enum,
                 'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
@@ -42,7 +44,9 @@ class AlumnusController extends Controller
             ]);
         } else {
             return view('alumni.index', [
-                'alumni' => \App\Models\Alumnus::where('is_draft', false)->orderBy('name')->paginate(12),
+                'alumni' => \App\Models\Alumnus::where('is_draft', false)
+                    ->orderBy('name')
+                    ->paginate(12),
                 'majors_enum' => Major::$majors_enum,
                 'further_courses_enum' => FurtherCourse::$further_courses_enum,
                 'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
@@ -133,7 +137,7 @@ class AlumnusController extends Controller
 
     /**
      * Show the form for importing new alumni from a spreadsheet file.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function import_create()
@@ -379,7 +383,7 @@ class AlumnusController extends Controller
     /**
      * Handles a request with an uploaded worksheet file that contains more than one alumni.
      * Extracts the data and stores it in new Alumnus objects.
-     * 
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -390,7 +394,7 @@ class AlumnusController extends Controller
                 'file' =>  'file',
             ]
         );
-        
+
         $file = $request->file('file');
         if (null == $file)
         {
