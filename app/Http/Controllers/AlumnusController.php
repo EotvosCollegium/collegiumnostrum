@@ -142,6 +142,7 @@ class AlumnusController extends Controller
      */
     public function import_create()
     {
+        if(!Auth::user() || !Auth::user()->is_admin) abort(403);
         return view('alumni.import', ['']);
     }
 
@@ -389,6 +390,7 @@ class AlumnusController extends Controller
      */
     public function import_store(Request $request)
     {
+        if(!Auth::user() || !Auth::user()->is_admin) abort(403);
         $request->validate(
             [
                 'file' =>  'file',
@@ -756,6 +758,7 @@ class AlumnusController extends Controller
      */
     public function destroy(Alumnus $alumnus)
     {
+        if(!Auth::user() || !Auth::user()->is_admin) abort(403);
         // TODO: authorize
         $alumnus->delete();
         Session::flash('alumnus_deleted', $alumnus->name);
