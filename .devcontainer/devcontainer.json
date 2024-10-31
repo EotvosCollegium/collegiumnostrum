@@ -1,0 +1,16 @@
+{
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"forwardPorts": [8000],
+	"workspaceFolder": "/workspace",
+	"service": "laraveldevelopment",
+    "customizations": {
+        "vscode": {
+			"settings": {},
+            "extensions": ["onecentlin.laravel-extension-pack", "xdebug.php-pack"]
+        }
+    },
+    "remoteUser": "root",
+    "containerUser": "root"
+}
