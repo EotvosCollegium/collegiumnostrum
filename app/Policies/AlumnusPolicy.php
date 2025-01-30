@@ -93,7 +93,7 @@ class AlumnusPolicy
      */
     public function createDraftFor(?User $user, Alumnus $alumnus) //can be guests too!
     {
-        return $this->createNewDraft($user) && !$alumnus->is_draft;
+        return $this->createNewDraft($user) && !$alumnus->is_draft && !$alumnus->pair_id;
     }
 
     /**
