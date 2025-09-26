@@ -15,11 +15,11 @@
         {{ config('app.name', 'Collegium Nostrum') }}
     </title>
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    @if (config('app.debug', 'false'))
-    <style>
-            .top-bar {background-color: #dd0000;}
-    </style>
+    @if(\App\Version::isHellas())
+        @vite(['resources/sass/hellas.scss', 'resources/js/app.js'])
+    @endif
+    @if(\App\Version::isNostrum())
+        @vite(['resources/sass/nostrum.scss', 'resources/js/app.js'])
     @endif
     <link rel="icon" type="image/x-icon" href="https://eotvos.elte.hu/media/da/30/e9a7dd3606d1cf1b44a674b6b3f4d7b52638a8a0cdc56526c14c0010e4c0/ec_logo.png">
 </head>
@@ -30,6 +30,11 @@
         <a href="/">
             <img class="header-banner-image" src="/images/eotvoscoll-nagy.svg" alt="ugrás a főoldalra"><img src="https://eotvos.elte.hu/media/da/30/e9a7dd3606d1cf1b44a674b6b3f4d7b52638a8a0cdc56526c14c0010e4c0/ec_logo.png" class="header-banner-image">
         </div>
+        @if (config('app.debug', 'false'))
+        <div style="background-color: #dd0000;color:white; width:100%; height: 3em; display: flex; align-items: center; justify-content: center;">
+            <a>DEBUG mód aktív</a>
+        </div>
+        @endif
         <nav class="navbar navbar-expand-md navbar-light shadow-sm top-bar">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -85,14 +90,29 @@
         <footer class="mb-4 footer-wrapper">
             <div class="container">
                 <div class="d-flex flex-column align-items-center">
+
+                    @if(\App\Version::isHellas())
+                    <div style="padding-top: 1em">
+                        <span class="small">A Nea Hellas az <a href="https://eotvos.elte.hu/">Eötvös József Collegium</a> <a href="https://collegiumnostrum.eotvos.elte.hu/">Collegium Nostrum</a> szoftverét használja</span>
+                    </div>
+                    <hr class="nka-acknowledgement">
+                    <div>
+                        <span class="small">A Collegium Nostrum információja:</span>
+                    </div>
+                    @endif
+
+
                     <img class="nka-acknowledgement" alt="Nemzeti Kulturális Alap" src="/images/nka_2023(2).png" />
                     <i class="nka-acknowledgement">A projekt a Nemzeti Kulturális Alap támogatásával valósult meg.</i>
 
                     <hr class="nka-acknowledgement">
 
+                    @if(\App\Version::isNostrum())
+
                     <div>
-                        <span class="small"><a href="https://eotvos.elte.hu/" class="footer-link">Eötvös József Collegium</a></span>
+                        <span class="small"><a href="https://eotvos.elte.hu/" class="footer-link">Eötvös </a></span>
                     </div>
+                    @endif
 
                     <!-- Login -->
                     @guest

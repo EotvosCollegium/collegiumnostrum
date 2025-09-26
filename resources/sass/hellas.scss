@@ -1,0 +1,135 @@
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+// Font Awesome ikonkészlet
+@import url('@fortawesome/fontawesome-free/css/all.css');
+
+$bottom-brown: #344055;
+$top-bread: #87BCDE;
+$action-button: #3a6067;
+$action-button-hover: #51848d;
+
+$danger-button: #a6370a;
+$danger-button-hover: #5a1a00;
+//$danger-button: #a0170d;
+//$danger-button-hover: #600600;
+//$danger-button: #bd5900;
+//$danger-button-hover: #8b4100;
+
+body {
+    background-color: $bottom-brown;
+}
+
+body > div {
+    background-color: white;
+}
+
+.header-banner-image {
+    height: 75px;
+}
+
+.banner-container {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-wrapper {
+    background-color: $bottom-brown;
+    color: white;
+}
+
+.footer-link {
+    background-color: $bottom-brown;
+    color: white !important;
+    text-decoration: none;
+}
+
+
+.nav-link{
+    color: black !important;
+}
+
+.top-bar{
+    background-color: $top-bread;
+}
+
+.btn-success, .btn-success:active, .btn-success:visited, .btn-primary, .btn-primary:active, .btn-primary:visited {
+    background-color: $action-button!important;
+    border: var(--bs-btn-border-width) solid $action-button-hover;
+    color: white!important;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    background-color: $action-button-hover!important;
+    border: var(--bs-btn-border-width) solid $action-button-hover;
+    color: white!important;
+}
+
+.btn-danger, .btn-danger:active, .btn-danger:visited {
+    background-color: $danger-button!important;
+    border: var(--bs-btn-border-width) solid $danger-button-hover;
+    color: white!important;
+}
+
+.btn-danger:hover {
+    background-color: $danger-button-hover!important;
+    border: var(--bs-btn-border-width) solid $danger-button-hover;
+    color: white!important;
+}
+
+/*EC logo*/
+img.header-banner-image {
+    margin: 0 7.5px;
+    filter: none;
+}
+
+ul {
+    padding-left: 20px; /*this way it will be at the edge and not so deep inside*/
+}
+
+/*The pagination box at the bottom.*/
+ul.pagination {
+    --bs-pagination-font-size: 1.5rem; /*this controls the size*/
+}
+
+/*Still for the paginator.*/
+.page-link, .page-link:hover {
+    color: $action-button;
+}
+.active > .page-link {
+    color: white;
+    background-color: $action-button;
+    border-color: $action-button-hover;
+}
+
+/*For the welcome text.*/
+.welcome-box p, .welcome-box blockquote, .longer-text {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+.welcome-box blockquote {
+    font-style: italic;
+}
+
+/*The start of membership at the top of cards.*/
+.start-of-membership {
+    font-size: 120%;
+    color: #444444;
+}
+
+/*For the NKA acknowledgement in the footer.*/
+img.nka-acknowledgement {
+    margin: 15px;
+    height: 75px;
+    width: 155px;
+}
+i.nka-acknowledgement {
+    text-align: center;
+}
+hr.nka-acknowledgement {
+    width: 100%;
+}

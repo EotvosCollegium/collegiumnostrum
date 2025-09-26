@@ -122,6 +122,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'version' => env('APP_VERSION', 'nostrum'),
 
     'cipher' => 'AES-256-CBC',
 
