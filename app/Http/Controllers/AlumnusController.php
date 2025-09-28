@@ -38,9 +38,9 @@ class AlumnusController extends Controller
                     ->orderBy('is_draft', 'desc')->orderBy('name') // the first ones will be those having a draft
                     ->paginate(12),
                 'majors_enum' => Major::majorsEnum(),
-                'further_courses_enum' => FurtherCourse::$further_courses_enum,
-                'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
-                'research_fields_enum' => ResearchField::$research_fields_enum,
+                'further_courses_enum' => FurtherCourse::furtherCoursesEnum(),
+                'scientific_degrees_enum' => ScientificDegree::scientificDegreesEnum(),
+                'research_fields_enum' => ResearchField::researchFieldsEnum(),
             ]);
         } else {
             return view('alumni.index', [
@@ -48,9 +48,9 @@ class AlumnusController extends Controller
                     ->orderBy('name')
                     ->paginate(12),
                 'majors_enum' => Major::majorsEnum(),
-                'further_courses_enum' => FurtherCourse::$further_courses_enum,
-                'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
-                'research_fields_enum' => ResearchField::$research_fields_enum,
+                'further_courses_enum' => FurtherCourse::furtherCoursesEnum(),
+                'scientific_degrees_enum' => ScientificDegree::scientificDegreesEnum(),
+                'research_fields_enum' => ResearchField::researchFieldsEnum(),
             ]);
         }
     }
@@ -113,9 +113,9 @@ class AlumnusController extends Controller
             'alumni' => $alumni,
             'search' => true,
             'majors_enum' => Major::majorsEnum(),
-            'further_courses_enum' => FurtherCourse::$further_courses_enum,
-            'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
-            'research_fields_enum' => ResearchField::$research_fields_enum,
+            'further_courses_enum' => FurtherCourse::furtherCoursesEnum(),
+            'scientific_degrees_enum' => ScientificDegree::scientificDegreesEnum(),
+            'research_fields_enum' => ResearchField::researchFieldsEnum(),
         ]);
     }
 
@@ -127,11 +127,11 @@ class AlumnusController extends Controller
     public function create()
     {
         return view('alumni.create_or_edit', [
-            'university_faculties' => UniversityFaculty::$university_faculties_enum,
+            'university_faculties' => UniversityFaculty::universityFacultiesEnum(),
             'majors' => Major::majorsEnum(),
-            'further_courses' => FurtherCourse::$further_courses_enum,
-            'scientific_degrees' => ScientificDegree::$scientific_degrees_enum,
-            'research_fields' => ResearchField::$research_fields_enum,
+            'further_courses' => FurtherCourse::furtherCoursesEnum(),
+            'scientific_degrees' => ScientificDegree::scientificDegreesEnum(),
+            'research_fields' => ResearchField::researchFieldsEnum(),
         ]);
     }
 
@@ -588,11 +588,11 @@ class AlumnusController extends Controller
         $user = Auth::user();
         if (!$user || $user->can('update', $alumnus) || $user->can('createDraftFor', $alumnus)) { //now this is true for everyone
             return view('alumni.create_or_edit', [
-                'university_faculties' => UniversityFaculty::$university_faculties_enum,
+                'university_faculties' => UniversityFaculty::universityFacultiesEnum(),
                 'majors' => Major::majorsEnum(),
-                'further_courses' => FurtherCourse::$further_courses_enum,
-                'scientific_degrees' => ScientificDegree::$scientific_degrees_enum,
-                'research_fields' => ResearchField::$research_fields_enum,
+                'further_courses' => FurtherCourse::furtherCoursesEnum(),
+                'scientific_degrees' => ScientificDegree::scientificDegreesEnum(),
+                'research_fields' => ResearchField::researchFieldsEnum(),
                 'alumnus' => $alumnus,
             ]);
         } else abort(403);

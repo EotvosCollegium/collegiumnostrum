@@ -88,22 +88,83 @@ class DatabaseSeeder extends Seeder
                 'name' => $major,
             ]);
         }
-        foreach (\App\Models\FurtherCourse::$further_courses_enum as $further_course) {
+        foreach ([
+        'akadémikus',
+        'általános iskolai tanár',
+        'egyetemi és/vagy főiskolai oktató',
+        'minisztériumi tisztviselő',
+        'középiskolai igazgató',
+        'középiskolai tanár',
+        'közgyűjteményi dolgozó',
+        'közgyűjteményi igazgató',
+        'író',
+        'művész',
+        'politikus',
+        'tudományos kutató',
+        'vállalkozó',
+        'egyéb'
+    ] as $further_course) {
             \App\Models\FurtherCourse::factory()->create([
                 'name' => $further_course,
             ]);
         }
-        foreach (\App\Models\ResearchField::$research_fields_enum as $research_field) {
+        foreach ([
+        'Matematika- és számítástudományok',
+        'Fizikai tudományok',
+        'Kémiai tudományok',
+        'Földtudományok',
+        'Biológiai tudományok',
+        'Környezettudományok',
+        'Multidiszciplináris természettudományok',
+        'Gazdálkodás- és szervezéstudományok',
+        'Közgazdaságtudományok',
+        'Állam- és jogtudományok',
+        'Szociológiai tudományok',
+        'Politikatudományok',
+        'Hadtudományok',
+        'Multidiszciplináris társadalomtudományok',
+        'Történelemtudományok',
+        'Irodalomtudományok',
+        'Nyelvtudományok',
+        'Filozófiai tudományok',
+        'Nevelés- és sporttudományok',
+        'Pszichológiai tudományok',
+        'Néprajz és kulturális antropológiai tudományok',
+        'Művészeti és művelődéstörténeti tudományok',
+        'Vallástudományok',
+        'Média- és kommunikációs tudományok',
+        'Multidiszciplináris bölcsészettudományok',
+        'egyéb'
+    ] as $research_field) {
             \App\Models\ResearchField::factory()->create([
                 'name' => $research_field,
             ]);
         }
-        foreach (\App\Models\UniversityFaculty::$university_faculties_enum as $university_faculty) {
+        foreach ([
+        'Állam- és Jogtudományi Kar',
+        'Bárczi Gusztáv Gyógypedagógiai Kar',
+        'Bölcsészettudományi Kar',
+        'Gazdaságtudományi Kar',
+        'Informatikai Kar',
+        'Pedagógiai és Pszichológiai Kar',
+        'Tanító- és Óvóképző Kar',
+        'Társadalomtudományi Kar',
+        'Természettudományi Kar',
+        'egyéb'
+    ] as $university_faculty) {
             \App\Models\UniversityFaculty::factory()->create([
                 'name' => $university_faculty,
             ]);
         }
-        foreach (\App\Models\ScientificDegree::$scientific_degrees_enum as $scientific_degree) {
+        foreach ([
+        'egyetemi doktor',
+        'kandidátus',
+        'tudományok doktora/MTA doktora',
+        'PhD',
+        'habilitáció',
+        'DLA',
+        'egyéb'
+    ] as $scientific_degree) {
             \App\Models\ScientificDegree::factory()->create([
                 'name' => $scientific_degree,
             ]);

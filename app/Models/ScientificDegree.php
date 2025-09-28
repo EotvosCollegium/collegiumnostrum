@@ -13,15 +13,10 @@ class ScientificDegree extends Model
         'name',
     ];
 
-    public static $scientific_degrees_enum = [
-        'egyetemi doktor',
-        'kandidátus',
-        'tudományok doktora/MTA doktora',
-        'PhD',
-        'habilitáció',
-        'DLA',
-        'egyéb'
-    ];
+    public static function scientificDegreesEnum()
+    {
+        return self::pluck('name')->toArray();
+    }
 
     public function alumni()
     {

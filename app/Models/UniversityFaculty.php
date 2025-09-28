@@ -13,18 +13,9 @@ class UniversityFaculty extends Model
         'name',
     ];
 
-    public static $university_faculties_enum = [
-        'Állam- és Jogtudományi Kar',
-        'Bárczi Gusztáv Gyógypedagógiai Kar',
-        'Bölcsészettudományi Kar',
-        'Gazdaságtudományi Kar',
-        'Informatikai Kar',
-        'Pedagógiai és Pszichológiai Kar',
-        'Tanító- és Óvóképző Kar',
-        'Társadalomtudományi Kar',
-        'Természettudományi Kar',
-        'egyéb'
-    ];
+    public static function universityFacultiesEnum(){
+        return self::pluck('name')->toArray();
+    }
 
     public function alumni()
     {

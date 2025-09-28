@@ -13,22 +13,9 @@ class FurtherCourse extends Model
         'name',
     ];
 
-    public static $further_courses_enum = [
-        'akadémikus',
-        'általános iskolai tanár',
-        'egyetemi és/vagy főiskolai oktató',
-        'minisztériumi tisztviselő',
-        'középiskolai igazgató',
-        'középiskolai tanár',
-        'közgyűjteményi dolgozó',
-        'közgyűjteményi igazgató',
-        'író',
-        'művész',
-        'politikus',
-        'tudományos kutató',
-        'vállalkozó',
-        'egyéb'
-    ];
+    public static function furtherCoursesEnum(){
+        return self::pluck('name')->toArray();
+    }
 
     public function alumni()
     {
