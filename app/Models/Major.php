@@ -11,11 +11,12 @@ class Major extends Model
 
     public static function majorsEnum()
     {
-        return self::pluck('name')->toArray();
+        return self::where('show_in_enums', true)->pluck('name')->toArray();
     }
 
     protected $fillable=[
         'name',
+        'show_in_enums',
     ];
 
     public function alumni()

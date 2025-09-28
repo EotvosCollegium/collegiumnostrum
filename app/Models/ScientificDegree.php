@@ -11,11 +11,12 @@ class ScientificDegree extends Model
 
     protected $fillable=[
         'name',
+        'show_in_enums',
     ];
 
     public static function scientificDegreesEnum()
     {
-        return self::pluck('name')->toArray();
+        return self::where('show_in_enums', true)->pluck('name')->toArray();
     }
 
     public function alumni()
