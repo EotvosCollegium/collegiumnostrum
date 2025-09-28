@@ -37,7 +37,7 @@ class AlumnusController extends Controller
                 'alumni' => \App\Models\Alumnus::whereNotIn('id', $idsHavingDraftPairs)
                     ->orderBy('is_draft', 'desc')->orderBy('name') // the first ones will be those having a draft
                     ->paginate(12),
-                'majors_enum' => Major::$majors_enum,
+                'majors_enum' => Major::majorsEnum(),
                 'further_courses_enum' => FurtherCourse::$further_courses_enum,
                 'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
                 'research_fields_enum' => ResearchField::$research_fields_enum,
@@ -47,7 +47,7 @@ class AlumnusController extends Controller
                 'alumni' => \App\Models\Alumnus::where('is_draft', false)
                     ->orderBy('name')
                     ->paginate(12),
-                'majors_enum' => Major::$majors_enum,
+                'majors_enum' => Major::majorsEnum(),
                 'further_courses_enum' => FurtherCourse::$further_courses_enum,
                 'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
                 'research_fields_enum' => ResearchField::$research_fields_enum,
@@ -112,7 +112,7 @@ class AlumnusController extends Controller
         return view('alumni.index', [
             'alumni' => $alumni,
             'search' => true,
-            'majors_enum' => Major::$majors_enum,
+            'majors_enum' => Major::majorsEnum(),
             'further_courses_enum' => FurtherCourse::$further_courses_enum,
             'scientific_degrees_enum' => ScientificDegree::$scientific_degrees_enum,
             'research_fields_enum' => ResearchField::$research_fields_enum,
@@ -128,7 +128,7 @@ class AlumnusController extends Controller
     {
         return view('alumni.create_or_edit', [
             'university_faculties' => UniversityFaculty::$university_faculties_enum,
-            'majors' => Major::$majors_enum,
+            'majors' => Major::majorsEnum(),
             'further_courses' => FurtherCourse::$further_courses_enum,
             'scientific_degrees' => ScientificDegree::$scientific_degrees_enum,
             'research_fields' => ResearchField::$research_fields_enum,
@@ -589,7 +589,7 @@ class AlumnusController extends Controller
         if (!$user || $user->can('update', $alumnus) || $user->can('createDraftFor', $alumnus)) { //now this is true for everyone
             return view('alumni.create_or_edit', [
                 'university_faculties' => UniversityFaculty::$university_faculties_enum,
-                'majors' => Major::$majors_enum,
+                'majors' => Major::majorsEnum(),
                 'further_courses' => FurtherCourse::$further_courses_enum,
                 'scientific_degrees' => ScientificDegree::$scientific_degrees_enum,
                 'research_fields' => ResearchField::$research_fields_enum,
