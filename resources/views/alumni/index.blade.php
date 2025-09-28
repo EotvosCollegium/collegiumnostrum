@@ -44,7 +44,14 @@
                         <form id="search-form" method="GET" action="{{ route('alumni.search') }}" enctype="multipart/form-data">
                             @csrf
                             <input type="text" class="form-control" name="name" placeholder="Név" value="{{ isset($_GET['name']) ? $_GET['name'] : '' }}">
-                            <input type="text" class="form-control" placeholder="Collegiumi tagság kezdete" pattern="\d{4}" maxlength="4" name="start_of_membership" value="{{ isset($_GET['start_of_membership']) ? $_GET['start_of_membership'] : '' }}">
+                            <input type="text" class="form-control"
+                                @if(\App\Version::isNostrum())
+                                    placeholder="Collegiumi tagság kezdete"
+                                @endif
+                                @if(\App\Version::isHellas())
+                                    placeholder="Szak megkezdésének éve"
+                                @endif
+                            pattern="\d{4}" maxlength="4" name="start_of_membership" value="{{ isset($_GET['start_of_membership']) ? $_GET['start_of_membership'] : '' }}">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="form-group">
@@ -128,7 +135,13 @@
                                 @endif
                                 <p class="small mb-0">
                                     @isset($alumnus->start_of_membership)
-                                    <span class="start-of-membership">Collegiumi tagság kezdete: <strong>{{ $alumnus->start_of_membership }}</strong></span>
+                                    <span class="start-of-membership">
+                                @if(\App\Version::isNostrum())
+                                    Collegiumi tagság kezdete:
+                                @endif
+                                @if(\App\Version::isHellas())
+                                    Szak megkezdésének éve:
+                                @endif <strong>{{ $alumnus->start_of_membership }}</strong></span>
                                     <br>
                                     @endisset
 
@@ -239,7 +252,7 @@
     // Based on https://stackoverflow.com/questions/40734855/reset-button-not-working-in-html-php.
     function setFormCleanReset(formId) {
         let formEl = document.querySelector(formId);
-    
+
         // Iterate all non-hidden fields, set values to ''
         for(const fieldEl of formEl.querySelectorAll('input:not([type=hidden])')) {
 

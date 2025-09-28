@@ -222,7 +222,12 @@
 
 
         <div class="form-group row mb-3">
-            <label for="start_of_membership" class="col-sm-2 col-form-label">Collegiumi tagság kezdete (szakkollégiumi felvétel éve)</label>
+            <label for="start_of_membership" class="col-sm-2 col-form-label">@if(\App\Version::isNostrum())
+                                    Collegiumi tagság kezdete (szakkollégiumi felvétel éve)
+                                @endif
+                                @if(\App\Version::isHellas())
+                                    Szak megkezdésének éve
+                                @endif</label>
             <div class="col-sm-10">
                 <input type="number" class="form-control @error('start_of_membership') is-invalid @enderror" id="start_of_membership" name="start_of_membership"
                     @if(isset($alumnus))

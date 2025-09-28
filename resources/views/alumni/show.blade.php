@@ -153,8 +153,13 @@
                 @endif
 
                 @isset($alumnus->start_of_membership)
-                    <li>Collegiumi tagság kezdete: {{ $alumnus->start_of_membership }}</li>
-
+                    <li>
+                        @if(\App\Version::isNostrum())
+                            Collegiumi tagság kezdete:
+                        @endif
+                        @if(\App\Version::isHellas())
+                            Szak megkezdésének éve:
+                        @endif {{ $alumnus->start_of_membership }}</li>
                 @endisset
 
                 @isset($alumnus->recognations)
