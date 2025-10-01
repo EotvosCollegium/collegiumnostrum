@@ -29,7 +29,23 @@
                 <p><b>Előre is köszönjük!</b></p>
             @endif
             @if(\App\Version::isHellas())
-                Hellas bemutatkozás
+                <h1>Tisztelt jelenlegi és korábbi újgörög szakos hallgatók!</h1>
+                <p>Az 1975-ben alapított újgörög szak idén ünnepli fennállásának 50. évfordulóját. Elhatároztuk, hogy erre az alkalomra létrehozunk egy, a honlapunkon elérhető adattárat, amely valamennyi egykori újgörög szakos hallgató közzétehető adatait tartalmazza.</p>
+                <p>Az adatbázis elsődleges célja a közösségépítés: egy összetartó és egymást szakmailag támogató újgörög szakos közösség létrehozása. Az adatsorok hallgatóink későbbi pályájára vonatkozó összesítésekre is alkalmasak lesznek, hogy pontosabban dokumentálhassuk, milyen szerepet játszott / játszik a magyar tudományos és szellemi életben alma materünk.</p>
+                <p><strong>Az adattárat folyamatosan fejlesztjük és bővítjük. Köszönjük megértését a hiányosságokért és pontatlanságokért és köszönjük segítségét és támogatását!</strong></p>
+                <p>Tisztelettel,<br/>
+                az újgörög szak oktatói és munkatársai</p>
+                <h2>Segítsen nekünk további információkkal!</h2>
+                <p>Az adattárba folyamatosan töltjük fel azokat, akik újgörög szakosok voltak. Az Alumni adattár menüpontra kattintva jelenik meg a kereshető adatbázis.</p>
+                <p>Ha saját magához vagy ismerőséhez új adatokat szeretne feltölteni:
+                <ul>
+                    <li>keressen rá név alapján a megfelelő bejegyzésre;</li>
+                    <li>kattintson a <emph>Részletek</emph> gombra;</li>
+                    <li>majd a jobb felső sarokban a <emph>További információ beküldése</emph> pontra.</li>
+                </ul>
+                </p>
+                <p>Igyekszünk minél gyorsabban egy teljességre törekvő adatbázist készíteni. Ha szeretné a munkánkat hiányzó emberekhez tartozó információkkal segíteni, az ő adatait <a href="https://forms.gle/ZqrV7JRkMzcEiBLM9">az alábbi űrlapon</a> is feltöltheti.</p>
+                <p><strong>Előre is köszönjük!</strong></p>
             @endif
         </div>
     </div>
