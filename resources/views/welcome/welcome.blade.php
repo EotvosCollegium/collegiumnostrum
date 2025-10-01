@@ -25,7 +25,7 @@
                     <li>majd a jobb felső sarokban a <em>További információ beküldése</em> pontra.</li>
                 </ul>
                 <p>Igyekszünk minél gyorsabban egy teljességre törekvő adatbázist készíteni. Ha szeretné a munkánkat hiányzó emberekhez tartozó információkkal segíteni,
-                    az ő adatait <a href="https://forms.gle/XocgGPS2WVQQXvyj8">az alábbi űrlapon</a> is feltöltheti.</p>
+                    az ő adatait <a href="https://forms.gle/XocgGPS2WVQQXvyj8" target="_blank">az alábbi űrlapon</a> is feltöltheti.</p>
                 <p><b>Előre is köszönjük!</b></p>
             @endif
             @if(\App\Version::isHellas())
@@ -44,7 +44,7 @@
                     <li>majd a jobb felső sarokban a <emph>További információ beküldése</emph> pontra.</li>
                 </ul>
                 </p>
-                <p>Igyekszünk minél gyorsabban egy teljességre törekvő adatbázist készíteni. Ha szeretné a munkánkat hiányzó emberekhez tartozó információkkal segíteni, az ő adatait <a href="https://forms.gle/ZqrV7JRkMzcEiBLM9">az alábbi űrlapon</a> is feltöltheti.</p>
+                <p>Igyekszünk minél gyorsabban egy teljességre törekvő adatbázist készíteni. Ha szeretné a munkánkat hiányzó emberekhez tartozó információkkal segíteni, az ő adatait <a href="https://forms.gle/ZqrV7JRkMzcEiBLM9" target="_blank">az alábbi űrlapon</a> is feltöltheti.</p>
                 <p><strong>Előre is köszönjük!</strong></p>
             @endif
         </div>
