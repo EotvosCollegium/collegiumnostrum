@@ -5,8 +5,8 @@
 // Font Awesome ikonkészlet
 @import url('@fortawesome/fontawesome-free/css/all.css');
 
-$bottom-brown: #344055;
-$top-bread: #87BCDE;
+$bottom-brown: #a7ddff;
+$top-bread: #8ac4e8;
 $action-button: #3a6067;
 $action-button-hover: #51848d;
 
@@ -38,13 +38,14 @@ body > div {
 
 .footer-wrapper {
     background-color: $bottom-brown;
-    color: white;
+}
+.footer-wrapper p{
+    margin-bottom: 0;
 }
 
 .footer-link {
     background-color: $bottom-brown;
-    color: white !important;
-    text-decoration: none;
+    color: black;
 }
 
 
@@ -123,9 +124,8 @@ ul.pagination {
 
 /*For the NKA acknowledgement in the footer.*/
 img.nka-acknowledgement {
-    margin: 15px;
-    height: 75px;
-    width: 155px;
+    margin: 1rem;
+    width: 18rem;
 }
 i.nka-acknowledgement {
     text-align: center;

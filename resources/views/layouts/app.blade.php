@@ -92,22 +92,22 @@
                 <div class="d-flex flex-column align-items-center">
 
                     @if(\App\Version::isHellas())
-                    <div style="padding-top: 1em">
-                        <span class="small">A Nea Hellas az <a href="https://eotvos.elte.hu/">Eötvös József Collegium</a> <a href="https://collegiumnostrum.eotvos.elte.hu/">Collegium Nostrum</a> szoftverét használja</span>
-                    </div>
+                    <img class="nka-acknowledgement" alt="Kulturális és Innovációs Minisztérium" src="/images/KIM_logo_color.png" />
+                    <i class="nka-acknowledgement">A projekt a Kulturális és Innovációs Minisztérium támogatásával valósult meg.</i>
+
                     <hr class="nka-acknowledgement">
-                    <div>
-                        <span class="small">A Collegium Nostrum információja:</span>
-                    </div>
+
+
+                    <p class="small">A Nea Hellas az <a href="https://eotvos.elte.hu/" class="footer-link">Eötvös József Collegium</a> <a href="https://collegiumnostrum.eotvos.elte.hu/" class="footer-link">Collegium Nostrum</a> szoftverét használja</p>
+                    <hr class="nka-acknowledgement">
                     @endif
 
+                    @if(\App\Version::isNostrum())
 
                     <img class="nka-acknowledgement" alt="Nemzeti Kulturális Alap" src="/images/nka_2023(2).png" />
                     <i class="nka-acknowledgement">A projekt a Nemzeti Kulturális Alap támogatásával valósult meg.</i>
 
                     <hr class="nka-acknowledgement">
-
-                    @if(\App\Version::isNostrum())
 
                     <div>
                         <span class="small"><a href="https://eotvos.elte.hu/" class="footer-link">Eötvös </a></span>
